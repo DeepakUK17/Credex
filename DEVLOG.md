@@ -1,0 +1,83 @@
+# DEVLOG.md — AI Spend Audit Build Log
+
+> Format: `[DAY N — DATE] — Focus area — Key decisions`
+
+---
+
+## Day 1 — 2026-05-08 — Foundation + Setup
+
+**What I built:**
+- Scaffolded React + Vite + TypeScript project
+- Installed and configured Tailwind CSS v3, Vitest, Supabase JS, Anthropic SDK, React Router, Zod
+- Set up GitHub Actions CI (lint + test + build)
+- Researched and documented all 8 tool pricing plans in PRICING_DATA.md (verified from official pages)
+- Wrote core library files: `pricing-data.ts`, `audit-engine.ts`, `supabase.ts`, `anthropic.ts`, `utils.ts`
+- 10 unit tests passing for audit engine
+- Built SpendForm, AuditResults, LeadCapture components
+- Built HomePage and AuditPage
+- Wrote three serverless API functions: `summary.ts`, `leads.ts`, `og-meta.ts`
+
+**Key decisions made today:**
+- **React + Vite over Next.js:** Faster development loop; serverless functions in `/api/` dir handle SSR requirements. Trade-off: OG meta tags require the `og-meta.ts` workaround for crawlers.
+- **Tailwind CSS v3 (not v4):** v4 is in beta; v3 is stable and the assignment explicitly allows it. Safer choice under deadline.
+- **Honeypot over CAPTCHA:** No user friction, no third-party JS, no accessibility problems. Document assumption that sophisticated bots may defeat it — acceptable risk for MVP.
+- **Credex credits threshold at $200/mo:** Conservative choice. At $200/mo, teams are committed spenders who will find value in a consultation. Lower threshold would produce noise recommendations.
+
+**Surprises:**
+- Vite's `create-vite` CLI cancelled when running in a non-empty directory — needed the `--overwrite` flag (not documented prominently).
+- `@anthropic-ai/sdk` v0.95 ships with native fetch; no need for `node-fetch` polyfill.
+
+**Tomorrow:**
+- Set up Supabase project and run schema migration
+- Deploy to Vercel and verify env vars
+- Start user interview outreach on LinkedIn/X
+
+**Commits today:**
+```
+feat: initialize Vite+React+TS project with Tailwind, Vitest, Supabase
+feat: implement audit engine with defensible per-tool rules
+feat: spend input form with localStorage persistence and Zod validation
+feat: results page with hero savings card, per-tool breakdown, share button
+feat: lead capture modal with honeypot spam protection
+feat: AI summary integration with Anthropic API and template fallback
+feat: serverless functions for summary, leads, og-meta
+docs: PRICING_DATA.md with all 8 tools verified from official pages
+docs: TESTS.md, PROMPTS.md
+chore: GitHub Actions CI workflow (lint + test + build)
+```
+
+---
+
+## Day 2 — [DATE] — [Focus]
+
+_To be written on Day 2_
+
+---
+
+## Day 3 — [DATE] — [Focus]
+
+_To be written on Day 3_
+
+---
+
+## Day 4 — [DATE] — [Focus]
+
+_To be written on Day 4_
+
+---
+
+## Day 5 — [DATE] — [Focus]
+
+_To be written on Day 5_
+
+---
+
+## Day 6 — [DATE] — [Focus]
+
+_To be written on Day 6_
+
+---
+
+## Day 7 — [DATE] — [Focus]
+
+_To be written on Day 7_
