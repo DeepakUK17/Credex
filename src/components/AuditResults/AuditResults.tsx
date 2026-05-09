@@ -266,7 +266,7 @@ export default function AuditResults({ result, aiSummary, auditId, formInput }: 
         <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">
           Tool Breakdown
         </h2>
-        <div className="space-y-2">
+        <div className="space-y-2 animate-stagger">
           {result.tools
             .sort((a, b) => b.totalMonthlySavings - a.totalMonthlySavings)
             .map(tool => (

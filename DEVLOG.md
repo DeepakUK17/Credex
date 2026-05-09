@@ -48,9 +48,34 @@ chore: GitHub Actions CI workflow (lint + test + build)
 
 ---
 
-## Day 2 — [DATE] — [Focus]
+## Day 2 — 2026-05-09 — UI Polish + 404 Page + CSS Animations
 
-_To be written on Day 2_
+**What I built:**
+- Added `NotFoundPage.tsx` — handles broken/expired audit share links with a clear CTA to start a new audit
+- Added catch-all `*` route in `App.tsx` so unknown paths land on 404 instead of a blank white screen
+- Enhanced `index.css` with shimmer skeleton loader, staggered list reveal animation (`animate-stagger`), and counter roll keyframe for the hero savings number
+- Applied stagger animation to tool breakdown list in `AuditResults.tsx` — each card reveals 80ms after the previous, making results feel alive
+- Verified build still green (`npm run build` ✓) and all 10 tests still passing
+
+**Key decisions made today:**
+- **Stagger over simultaneous reveal:** All tool cards showing up at once creates a "wall of text" impression. Staggered reveal draws the eye down the list and emphasizes the top-savings tools naturally since they appear first (already sorted by descending savings).
+- **404 as conversion opportunity:** Rather than a generic "page not found", the 404 copy frames the situation as "the audit expired" and immediately offers a new audit. Reduces dead-end bounce rate.
+- **Shimmer loader added to CSS (not yet used in UI):** Pre-built for Day 4 when we load audit data from Supabase via URL — the skeleton will replace the spinner for a more polished loading state.
+
+**Surprises:**
+- The `animate-stagger > *` CSS selector works cleanly on the React-rendered `div` children without any JS intervention. Tailwind's `content` scan picks up the class name because it's in a `.tsx` file — no safelist needed.
+
+**Tomorrow:**
+- Hook up Supabase (requires user to provision project + add env vars to `.env.local`)
+- Test the full end-to-end flow: form → audit → Supabase write → shareable URL
+- Start user interview outreach
+
+**Commits today:**
+```
+feat: add 404 NotFoundPage with new-audit CTA
+feat: stagger animation on audit results tool breakdown list
+style: shimmer loader, counter-roll, stagger CSS utilities in index.css
+```
 
 ---
 
