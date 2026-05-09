@@ -128,7 +128,7 @@ CREATE POLICY "Anyone can create lead" ON leads FOR INSERT WITH CHECK (true);
 
 ## CI
 
-[![CI](https://github.com/your-username/credex-ai-spend-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/credex-ai-spend-audit/actions/workflows/ci.yml)
+[![CI](https://github.com/DeepakUK17/Credex/actions/workflows/ci.yml/badge.svg)](https://github.com/DeepakUK17/Credex/actions/workflows/ci.yml)
 
 `npm run test` · `npm run lint` · `npm run build`
 
