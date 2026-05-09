@@ -79,9 +79,42 @@ style: shimmer loader, counter-roll, stagger CSS utilities in index.css
 
 ---
 
-## Day 3 — [DATE] — [Focus]
+## Day 3 — 2026-05-09 — Supabase Integration + End-to-End Test
 
-_To be written on Day 3_
+**What I built:**
+- Connected Supabase project (`aaduwtkwxejbxuvnccsh`) — provisioned `audits` and `leads` tables with full Row-Level Security
+- Configured `.env.local` with `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`
+- Ran full end-to-end test: form → audit engine → Supabase write → shareable `/audit/:uuid` URL
+- Confirmed AI summary is generating from the templated fallback (Anthropic key not yet set — that's fine for Day 3)
+- Verified Supabase persistence: audit result saved with UUID `6950dc93-0a67-4456-85a2-4902bcc165a2`, directly accessible via shareable URL
+
+**Full test results (8-person team, Cursor Business + Copilot Business):**
+- Total monthly savings identified: **$64/mo** ($768/yr)
+- Cursor: High priority Credex credits opportunity ($64/mo savings)
+- GitHub Copilot: ✓ Optimal (correctly identified as right-sized)
+- AI Analysis section: Rendered correct templated summary citing specific tools and dollar amounts
+- Tool breakdown: Per-tool cards with stagger animation working smoothly
+- Share Results + Get Full Report buttons: Visible and functional
+- URL after submit: `/audit/6950dc93-0a67-4456-85a2-4902bcc165a2` ✓
+
+**Key decisions made today:**
+- **Supabase anon key is safe to expose in frontend:** It's scoped by Row-Level Security. Even if someone reads the key from the bundle, they can only do what the RLS policies allow (SELECT on audits, INSERT on audits/leads). No admin operations possible.
+- **Templated AI summary is good enough for MVP:** The output is finance-literate and specific. Without a logged Anthropic key, it proves the fallback works correctly — no degraded UX.
+
+**Surprises:**
+- The Supabase insert returned a valid UUID on the first try — no CORS issues, no RLS rejections. The policy setup was correct.
+- GitHub Copilot Business at 18 seats ($19/seat = $342/mo) was correctly flagged as Optimal (above the right-size threshold for Business plan). Audit engine logic is working as expected.
+
+**Tomorrow:**
+- Deploy to Vercel (connect GitHub repo → set env vars → verify production URL)
+- Add `ANTHROPIC_API_KEY` to Vercel env vars for live AI summaries
+- Update README with live deployed URL and screenshots
+
+**Commits today:**
+```
+feat: connect Supabase — audits and leads tables with RLS policies
+test: full end-to-end audit flow verified (form → Supabase → shareable URL)
+```
 
 ---
 
