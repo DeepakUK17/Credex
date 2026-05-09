@@ -8,7 +8,7 @@ Find hidden savings across Cursor, Claude, ChatGPT, GitHub Copilot, Gemini, and 
 
 ## 🚀 Live Demo
 
-**[→ ai-spend-audit.vercel.app](https://ai-spend-audit.vercel.app)** *(update before submission)*
+**[→ credex-coral.vercel.app](https://credex-coral.vercel.app)**
 
 ---
 

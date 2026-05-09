@@ -41,7 +41,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const appUrl = process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
-    : 'https://ai-spend-audit.vercel.app';
+    : 'https://credex-coral.vercel.app';
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Cache-Control', 'public, max-age=300, stale-while-revalidate=600');
