@@ -140,7 +140,7 @@ function auditGithubCopilot(input: ToolInput, teamSize: number): Recommendation[
   return recs;
 }
 
-function auditClaude(input: ToolInput, teamSize: number): Recommendation[] {
+function auditClaude(input: ToolInput): Recommendation[] {
   const recs: Recommendation[] = [];
   const pricing = PRICING['claude'];
   const proPlan = pricing.plans.find(p => p.id === 'pro')!;
@@ -193,8 +193,7 @@ function auditChatGPT(input: ToolInput): Recommendation[] {
 
 function getAlternativeRecs(
   input: ToolInput,
-  useCase: UseCase,
-  teamSize: number
+  useCase: UseCase
 ): Recommendation[] {
   const recs: Recommendation[] = [];
   const { toolId, monthlySpend, seats } = input;
@@ -300,7 +299,7 @@ export function runAudit(input: AuditFormInput): AuditResult {
           recs.push(...auditGithubCopilot(toolInput, teamSize));
           break;
         case 'claude':
-          recs.push(...auditClaude(toolInput, teamSize));
+          recs.push(...auditClaude(toolInput));
           break;
         case 'chatgpt':
           recs.push(...auditChatGPT(toolInput));
@@ -308,7 +307,7 @@ export function runAudit(input: AuditFormInput): AuditResult {
       }
 
       // 2. Alternative tool recommendations by use case
-      recs.push(...getAlternativeRecs(toolInput, useCase, teamSize));
+      recs.push(...getAlternativeRecs(toolInput, useCase));
 
       // 3. Credex credits opportunity
       const credexRec = getCredexRec(toolInput);

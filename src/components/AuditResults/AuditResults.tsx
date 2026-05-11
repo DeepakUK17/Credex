@@ -10,10 +10,6 @@ type AuditResultsProps = {
   result: AuditResult;
   aiSummary: string | null;
   auditId: string | null;
-  formInput: {
-    teamSize: number;
-    useCase: string;
-  };
 };
 
 // ─── Share Button ─────────────────────────────────────────────────────────────
@@ -161,7 +157,7 @@ function ToolResultCard({ tool }: { tool: ToolAuditResult }) {
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
-export default function AuditResults({ result, aiSummary, auditId, formInput }: AuditResultsProps) {
+export default function AuditResults({ result, aiSummary, auditId }: AuditResultsProps) {
   const [showLeadCapture, setShowLeadCapture] = useState(false);
   const [leadCaptured, setLeadCaptured] = useState(false);
 

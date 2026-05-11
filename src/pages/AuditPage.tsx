@@ -31,7 +31,6 @@ export default function AuditPage() {
   useEffect(() => {
     // If we navigated here directly (shared URL) without state, fetch from Supabase
     if (!auditResult && id && id !== 'preview') {
-      setLoading(true);
       getAudit(id)
         .then(record => {
           if (!record) {
@@ -96,7 +95,6 @@ export default function AuditPage() {
             result={auditResult}
             aiSummary={aiSummary}
             auditId={id && id !== 'preview' ? id : null}
-            formInput={formInput}
           />
         ) : null}
       </main>
