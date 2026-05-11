@@ -24,6 +24,7 @@ export default function HomePage() {
             href="https://credex.com"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit Credex official website"
             className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
           >
             credex.com ↗
