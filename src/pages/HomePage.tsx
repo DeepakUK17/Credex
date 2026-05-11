@@ -21,13 +21,13 @@ export default function HomePage() {
             <span className="text-slate-600 text-sm">by Credex</span>
           </a>
           <a
-            href="https://credex.com"
+            href="https://credex.rocks/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit Credex official website"
             className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
           >
-            credex.com ↗
+            credex.rocks ↗
           </a>
         </div>
       </header>

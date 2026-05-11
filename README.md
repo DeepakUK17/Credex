@@ -14,11 +14,10 @@ Find hidden savings across Cursor, Claude, ChatGPT, GitHub Copilot, Gemini, and 
 
 ## Screenshots
 
-*(Add 3 screenshots after first Vercel deployment)*
-
-1. Landing page + spend input form  
-2. Audit results page — high savings scenario  
-3. Lead capture modal + share button  
+![Landing Page + Form](SS/Screenshot%202026-05-11%20220328.png)
+![Audit Results High Savings](SS/Screenshot%202026-05-11%20220347.png)
+![Lead Capture Modal](SS/Screenshot%202026-05-11%20220406.png)
+![Share View](SS/Screenshot%202026-05-11%20220437.png)  
 
 ---
 
