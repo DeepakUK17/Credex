@@ -12,6 +12,15 @@ Find hidden savings across Cursor, Claude, ChatGPT, GitHub Copilot, Gemini, and 
 
 ---
 
+## ⚡ Lighthouse Scores
+
+- **Performance:** 99
+- **Accessibility:** 100
+- **Best Practices:** 100
+- **SEO:** 91
+
+---
+
 ## Screenshots
 
 ![Landing Page + Form](SS/Screenshot%202026-05-11%20220328.png)
