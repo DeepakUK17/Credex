@@ -22,9 +22,7 @@ export default function AuditPage() {
   const [aiSummary, setAiSummary] = useState<string | null>(
     locationState?.aiSummary ?? null
   );
-  const [formInput, setFormInput] = useState(
-    locationState?.formInput ?? { teamSize: 0, useCase: 'mixed' }
-  );
+
   const [loading, setLoading] = useState(!locationState?.auditResult);
   const [error, setError] = useState<string | null>(null);
 
@@ -40,12 +38,10 @@ export default function AuditPage() {
           // Reconstruct the AuditResult from the stored record
           setAuditResult(record.results as unknown as AuditResult);
           setAiSummary(record.ai_summary);
-          setFormInput({ teamSize: record.team_size, useCase: record.use_case });
+
         })
         .catch(() => setError('Failed to load audit. Please try again.'))
         .finally(() => setLoading(false));
-    } else {
-      setLoading(false);
     }
   }, [id, auditResult]);
 
